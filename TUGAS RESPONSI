@@ -1,0 +1,189 @@
+<BAGIAN INPUT DATA>
+#include <iostream>
+#include <conio.h>
+#include <cstring>
+#include <stdio.h>
+#include <iomanip>
+#include <stdlib.h>
+void menu(); void entrydata12131294(); muncul12131294; bye12131294();
+void cetak12131294(int row, char *text); int bom12131294(); back();
+void entrynilai12131294(); int habot12131294(int bobot);
+int pilihan, w, i=1, lagi=0, bot;
+string inputlg, nim, nm, smstr, kode[15][15], nmatakul[15][15], sks[15][15], nilai[15][1];
+int main()
+{
+
+ for (int a=1; a>0; a++)
+ {
+    clrscr();
+    menu();
+    if (pilihan==1)
+  {
+    entrydata12131294();
+      do{
+      entrynilai12131294();
+      habot12131294(bot);
+      i++;
+      }while(inputlg=="y");
+      }
+  else if (pilihan==2)
+  {
+      clrscr();
+      muncul12131294();
+      cout<<endl<<endl;
+      back();
+    }
+  else if (pilihan==3)
+  {
+    bom12131294();
+    exit(bom12131294());
+     }
+    else
+  {
+    cout<<"kode yang anda masukan salah!!, silakan ulangi lagi, terimakasih";
+    }
+  }
+getch();
+}
+void menu()
+{
+cout<<"Menu Pilihan: \n";
+cout<<"1. Entry Nilai Mahasiswa \n";
+cout<<"2. Tampil Nilai Mahasiswa \n";
+cout<<"3. Exit \n";
+cout<<"\n";
+cin>>pilihan;
+cout<<endl<<endl;
+}
+void entrydata12131294()
+{
+cout<<"Mahasiswa \n";
+cout<<"----------------------------------\n";
+cout<<"NIM "<<setw(12)<<": ";cin>>nim;
+cout<<"Nama"<<setw(12)<<": ";cin>>nm;
+cout<<"nilai mata kuliah"<<setw(9)<<": ";cin>>jurusan;
+cout<<"Semester "<<setw(7)<<": ";cin>>smstr;
+cout<<endl<<endl;
+}
+
+void entrynilai12131294()
+{
+cout<<"Matakuliah dan Nilai \n";
+cout<<"--------------------------------------\n";
+cout<<"Kode "<<setw(15 )<<": ";cin>>kode[i][1];
+cout<<"Nama Matakuliah "<<setw(4)<<": ";cin>>nmatakul[i][1];
+cout<<"SKS "<<setw(4)<<": ";cin>>sks[i][1];
+cout<<"Nilai (Huruf) "<<setw(4)<<": ";cin>>nilai[i][1];
+cout<<"Input Nilai Lagi (y/t) "<<setw(6)<<": ";cin>>inputlg;
+cout<<endl<<endl;
+}
+int habot12131294(int bobot)
+{
+int j;
+ if (nilai[j][1]=='a' || nilai[j][1]=='A')
+   {
+ bobot = 4;
+   }
+ else  if (nilai[j][1]=='b' || nilai[j][1]=='B')
+   {
+   bobot = 3;
+   }
+ else  if (nilai[j][1]=='c' || nilai[j][1]=='C')
+   {
+   bobot = 2;
+   }
+   else  if (nilai[j][1]=='d' || nilai[j][1]=='D')
+   {
+   bobot = 1;
+   }
+ else
+   {
+ bobot = 0;
+   }
+return (bobot);
+}
+muncul12131294()
+{
+cout<<"NIM "<<setw(12)<<": "<<nim<<endl;
+cout<<"Nama"<<setw(12)<<": "<<nm<<endl;
+cout<<"Jurusan"<<setw(9)<<": "<<jurusan<<endl;
+cout<<"Semester "<<setw(7)<<": "<<smstr<<endl;
+
+gotoxy(1,7); cout<<"--------------------------------------------------------------------------------";
+gotoxy(1,9); cout<<"--------------------------------------------------------------------------------";
+gotoxy(1,8); cout<<"|";
+gotoxy(6,8); cout<<"|";
+gotoxy(20,8); cout<<"|";
+gotoxy(45,8); cout<<"|";
+gotoxy(57,8); cout<<"|";
+gotoxy(68,8); cout<<"|";
+gotoxy(80,8); cout<<"|";
+gotoxy(3,8); cout<<"No";
+gotoxy(8,8); cout<<"Kode";
+gotoxy(22,8); cout<<"Nama Matakuliah";
+gotoxy(47,8); cout<<"SKS";
+gotoxy(59,8); cout<<"Nilai";
+gotoxy(70,8); cout<<"Bobot";
+
+
+for (int j=1; j<i; j++)
+{
+gotoxy(3,10+j); cout<<j<<".";
+gotoxy(8,10+j); cout<<kode[j][1];
+gotoxy(22,10+j); cout<<nmatakul[j][1];
+gotoxy(47,10+j); cout<<sks[j][1];
+gotoxy(59,10+j); cout<<nilai[j][1];
+gotoxy(70,10+j); cout<<habot12131294(bot);
+}
+
+}
+bye12131294()
+ {
+   clrscr();
+ cetak12131294(1,"RESPONSI");
+   cetak12131294(2,"INPUT NILAI MAHASISWA");
+   cetak12131294(3,"PRAKTIKUM PEMROGRAMAN SYSTEM");
+   cetak12131294(4,"AUTHOR : WAWAN CHAHYO NUGROHO / 12131294");
+   cetak12131294(5,"PRODI  : S1, TEKNIK INFORMATIKA");
+ }
+void cetak12131294(int row, char *text)
+ {
+ gotoxy(40-strlen(text)/2,row); cout<<text;
+ }
+int bom12131294()
+{
+int x;
+for(int n=3555;n>=1;n--)
+{
+ for(int m=n;m>=1;m--)
+ {
+    for(int o=m;o>=1;o--)
+  {
+    x=o;
+    x--;
+ }
+   x=m;
+   x--;
+ }
+   x=n;
+   bye12131294();
+   cout<<x;
+ }
+return 0;
+}
+back()
+{
+do{
+cout<<"Silakan Tekan 0 untuk kembali ke menu";cin>>w;
+if (w==0)
+ {
+   clrscr();
+   menu();
+   }
+   else
+   {
+   cout<<"angka yang anda masukan tidak benar"<<endl;
+   }
+}
+while(w != 0);
+}
