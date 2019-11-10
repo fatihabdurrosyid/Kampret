@@ -1,0 +1,129 @@
+//ini adalah kodingan untuk mengurut kan data mhw dan implementasi searching
+#include <iostream>
+#include <stdio.h>
+#include <conio.h>
+#include <string.h>
+using namespace std;
+main()
+{
+        struct data_mhs {
+        int npm;
+        char nama[30];
+        int orkom,Jarkom,Basis data,PBO,na;
+
+    };
+    struct data_mhs siswa[5];
+    struct data_mhs temp;
+    int a, b, c,ketemu;
+    int no;
+    char grd;
+    cout<<"------------------Kelompok 4----------------\n";
+    cout<<"                 1.A\n";
+    cout<<"                 2.B\n";
+    cout<<"                 3.C\n";
+    cout << "\n----------------Program Searching dan Sorting Data Nilai Mahasiswa-------------"<<endl;
+    cout << "Input Jumlah Mahasiswa: ";
+    cin >> c;
+
+        if (siswa[a].na>=90 && siswa[a].na<=100){
+                grd='A';
+            }
+            if(siswa[a].na>=70 && siswa[a].na<=89){
+                grd='B';
+            }
+            if(siswa[a].na>=50 && siswa[a].na<=69){
+                grd='C';
+                }
+        else{
+            grd='D';
+        }
+        cout <<"Input Data Ke-"<<a+1<<endl;
+        cout << "Masukkan Nama\t\t: ";
+        cin >> siswa[a].nama;
+        cout << "Masukkan NIM\t\t: ";
+        cin>>siswa[a].npm;
+        cout << "Masukkan Nilai Orkom\t: ";
+        cin >> siswa[a].tugas;
+        cout << "Masukkan Nilai Jarkom\t: ";
+        cin >> siswa[a].kuis;
+        cout << "Masukkan Nilai Basis data\t: ";
+        cin >> siswa[a].uts;
+        cout << "Masukkan Nilai PBO\t: ";
+        cin >> siswa[a].uas;
+        siswa[a].na=((15*siswa[a].Orkom)+(15*siswa[a].Jarkom)+(30*siswa[a].Basis data)+(40*siswa[a].PBO))/100;
+        cout << "           Nilai Akhir\t      : "<<siswa[a].na;
+        cout << "\n\n";
+        cout<<"Grade\t\t: "<<grd<<endl;
+    }
+		for (a=1;a<c;a++)
+        {
+            for (b=0; b<c-a; b++)
+            if (siswa[b].na<siswa[b+1].na)
+            {
+                temp.npm=siswa[b].npm;
+                siswa[b].npm=siswa[b+1].npm;
+                siswa[b+1].npm=temp.npm;
+
+
+                temp.Orkom=siswa[b].Orkom;
+                siswa[b].Orkom=siswa[b+1].Orkom;
+                siswa[b+1].Orkom=temp.Orkom;
+
+                temp.Jarkom=siswa[b].Jarkom;
+                siswa[b].Jarkom=siswa[b+1].Jarkom;
+                siswa[b+1].kuis=temp.kuis;
+
+                temp.Basis data=siswa[b].Basis data;
+                siswa[b].Basis data=siswa[b+1].Basis data;
+                siswa[b+1].Basis data=temp.Basis data;
+
+                temp.PBO=siswa[b].PBO;
+                siswa[b].PBO=siswa[b+1].PBO;
+                siswa[b+1].PBO=temp.PBO;
+
+                temp.na=siswa[b].na;
+                siswa[b].na=siswa[b+1].na;
+                siswa[b+1].na=temp.na;
+            }
+            cout<<"Diurutkan Berdasarkan Nilai Akhir:\n";
+            cout<<endl;
+            for (a=0; a<c; a++){
+                cout << "Nilai Akhir\t: "<<siswa[a].na<<endl;
+                cout << "NIM\t\t: "<<siswa[a].npm<<endl;
+                cout << "Nama\t\t: "<<siswa[a].nama<<endl;
+                cout << "Nilai Orkom\t: "<<siswa[a].tugas<<endl;
+                cout << "Nilai Jarkom\t: "<<siswa[a].kuis<<endl;
+                cout << "Nilai Basis data\t: "<<siswa[a].uts<<endl;
+                cout << "Nilai PBO\t: "<<siswa[a].uas<<endl;
+                cout << "Grade\t\t: "<<grd<<endl;
+                cout << "\n\n";
+           }
+cout<<endl;
+        cout<<"Input NIM yang dicari:";
+        cin>>no;
+
+        ketemu=0;
+
+        for(int a=1;a<=b;a++)
+        {
+            if(no==siswa[a].npm)
+            {
+                ketemu=1;
+                cout<<"\nData ditemukan pada indeks ke:"<<a;
+                    cout<<"\nNama                 :"<<siswa[a].nama;
+                    cout<<"\nNPM                  :"<<siswa[a].npm;
+                    cout<<"\nNilai Orkom          :"<<siswa[a].tugas;
+                    cout<<"\nNilai Jarkom         :"<<siswa[a].kuis;
+                    cout<<"\nNilai Basis data     :"<<siswa[a].uts;
+                    cout<<"\nNilai PBO            :"<<siswa[a].uas;
+                    cout<<"\nNilai Akhir          :"<<siswa[a].na;
+            }
+            }
+
+            if(ketemu==0)
+            {
+                cout<<"Data tidak ditemukan";
+            }
+
+           getch();
+}
